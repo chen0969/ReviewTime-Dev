@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movie_reviews",
+  "info": {
+    "singularName": "movie-review",
+    "pluralName": "movie-reviews",
+    "displayName": "Movie Review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "movie_poster": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "movie_category": {
+      "type": "enumeration",
+      "enum": [
+        "Comedy",
+        "Action",
+        "Horror",
+        "Romance",
+        "Animation"
+      ]
+    },
+    "rate": {
+      "type": "integer",
+      "required": true
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}
